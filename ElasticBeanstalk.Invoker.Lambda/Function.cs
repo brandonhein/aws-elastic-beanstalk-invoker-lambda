@@ -30,11 +30,11 @@ namespace ElasticBeanstalk.Invoker.Lambda
             }
         }
 
-        public string Handler(string input, ILambdaContext context)
+        public string Handler(object input, ILambdaContext context)
         {
             if (string.IsNullOrEmpty(_body))
             {
-                _body = input;
+                _body = input.ToString();
             }
 
             var result = base.Invoke(_ebUrl, _method, _body);
