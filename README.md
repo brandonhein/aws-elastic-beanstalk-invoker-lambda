@@ -17,8 +17,8 @@ After looking up ways to do AWS Cron Jobs, I stumbled across this [article](http
 ### Creation/Setup
 #### Lambda steps
 1. Create a Lambda Function in the region that the Elastic Beanstalk app lives, that has the `AWSLambdaBasicExecutionRole`.
-2. Runtime is `.NET Core 2.1 (C#/PowerShell)
-3. Handler `ElasticBeanstalk.Invoker.Lambda::ElasticBeanstalk.Invoker.Lambda.Function::Handler`
+2. Runtime is `Node.js 10.x`
+3. Handler `src/lambda.handler`
 3. If your Elastic Beanstalk app is behind private VPC follow the next steps... if not you can skip to step 6.
 4. Make sure you also add the `AWSLambdaVPCAccessExecutionRole` role to your lambda
 5. Setup your Network for the lambda to register being part of your private VPC.  (correct subnets)
